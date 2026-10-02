@@ -74,17 +74,51 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function getReadMoreUrl(post) {
+        const params = new URLSearchParams({
+            post: 'custom',
+            title: post.title,
+            category: post.category
+        });
+        const fallbackUrl = `blog-post.html?${params.toString()}`;
+        if (!post.url) return fallbackUrl;
+
+        try {
+            const parsed = new URL(post.url, window.location.href);
+            if (parsed.protocol === 'http:' || parsed.protocol === 'https:' || parsed.origin === window.location.origin) {
+                return parsed.href;
+            }
+        } catch (e) {
+            return fallbackUrl;
+        }
+
+        return fallbackUrl;
+    }
+
+    function escapeHtml(value) {
+        return String(value)
+            .replaceAll('&', '&amp;')
+            .replaceAll('<', '&lt;')
+            .replaceAll('>', '&gt;')
+            .replaceAll('"', '&quot;')
+            .replaceAll("'", '&#39;');
+    }
+
     function appendPostToGrid(post, animate = true) {
+        const safeCategory = escapeHtml(post.category);
+        const safeTitle = escapeHtml(post.title);
+        const safeImage = escapeHtml(post.imageUrl || `https://placehold.co/600x400/18181b/ffffff?text=${encodeURIComponent(post.title)}`);
+        const safeUrl = escapeHtml(getReadMoreUrl(post));
         const cardHtml = `
-            <a href="${post.url || '#'}" class="group block ${animate ? 'reveal-up active' : ''}">
+            <a href="${safeUrl}" class="group block ${animate ? 'reveal-up active' : ''}">
                 <div class="apple-card overflow-hidden h-full flex flex-col">
                     <div class="h-48 w-full bg-zinc-800 relative overflow-hidden">
-                        <img src="${post.imageUrl || 'https://placehold.co/600x400/18181b/ffffff?text=' + encodeURIComponent(post.title)}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="${safeImage}" alt="${safeTitle}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-8 flex-grow flex flex-col justify-between">
                         <div>
-                            <p class="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-3">${post.category}</p>
-                            <h3 class="text-xl font-bold text-white mb-4 leading-snug group-hover:text-blue-400 transition-colors">${post.title}</h3>
+                            <p class="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-3">${safeCategory}</p>
+                            <h3 class="text-xl font-bold text-white mb-4 leading-snug group-hover:text-blue-400 transition-colors">${safeTitle}</h3>
                         </div>
                         <p class="text-[#86868b] text-sm mt-4 font-medium flex items-center">
                             Read article 
@@ -103,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const title = document.getElementById('blog-title').value.trim();
             const category = document.getElementById('blog-category').value.trim();
             let imageUrl = document.getElementById('blog-image').value.trim();
-            const url = document.getElementById('blog-url').value.trim() || '#';
+            const url = document.getElementById('blog-url').value.trim();
 
             if (!title || !category) return;
 
