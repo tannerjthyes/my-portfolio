@@ -74,9 +74,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function getReadMoreUrl(post) {
+        if (post.url) return post.url;
+        const params = new URLSearchParams({
+            post: 'custom',
+            title: post.title,
+            category: post.category
+        });
+        return `blog-post.html?${params.toString()}`;
+    }
+
     function appendPostToGrid(post, animate = true) {
         const cardHtml = `
-            <a href="${post.url || '#'}" class="group block ${animate ? 'reveal-up active' : ''}">
+            <a href="${getReadMoreUrl(post)}" class="group block ${animate ? 'reveal-up active' : ''}">
                 <div class="apple-card overflow-hidden h-full flex flex-col">
                     <div class="h-48 w-full bg-zinc-800 relative overflow-hidden">
                         <img src="${post.imageUrl || 'https://placehold.co/600x400/18181b/ffffff?text=' + encodeURIComponent(post.title)}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
@@ -103,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const title = document.getElementById('blog-title').value.trim();
             const category = document.getElementById('blog-category').value.trim();
             let imageUrl = document.getElementById('blog-image').value.trim();
-            const url = document.getElementById('blog-url').value.trim() || '#';
+            const url = document.getElementById('blog-url').value.trim();
 
             if (!title || !category) return;
 
