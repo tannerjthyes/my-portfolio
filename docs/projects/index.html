@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Showcase | Tanner Thyes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="antialiased selection:bg-gray-700 selection:text-white">
+
+    <!-- Frosted Navigation -->
+    <nav class="fixed top-0 w-full z-50 frosted-nav border-b border-gray-800/50">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center text-sm font-medium text-gray-300">
+            <a href="../index.html" class="hover:text-white font-semibold transition-colors duration-300">Tanner Thyes</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="../index.html" class="hover:text-white transition-colors duration-300">Home</a>
+                <a href="../resume.html" class="hover:text-white transition-colors duration-300">Resume</a>
+                <a href="index.html" class="text-white font-semibold transition-colors duration-300">Projects</a>
+                <a href="../blog/index.html" class="hover:text-white transition-colors duration-300">Blog</a>
+            </div>
+            <a href="mailto:contact@example.com" class="hover:text-white transition-colors duration-300">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="pt-36 pb-16 px-6">
+        <div class="max-w-5xl mx-auto reveal-up">
+            <span class="text-xs uppercase tracking-widest text-blue-400 font-semibold mb-3 block">Portfolio</span>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tighter-apple mb-6">
+                Featured Projects.
+            </h1>
+            <p class="text-xl text-[#86868b] max-w-2xl leading-relaxed">
+                A curation of cloud infrastructure systems, data engineering pipelines, developer toolchains, and creative works.
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="py-12 px-6">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Project 1 -->
+            <div class="apple-card p-8 md:p-10 reveal-up flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-semibold uppercase tracking-wider text-blue-400">Cloud & Data</span>
+                        <span class="text-xs text-[#86868b]">Production</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Event-Driven Lakehouse Architecture</h3>
+                    <p class="text-[#86868b] leading-relaxed mb-6">
+                        Automated continuous ingestion pipeline streaming events into S3, orchestrated with AWS Lambda and loaded into Snowflake via dbt transformations.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="px-3 py-1 bg-zinc-800 text-xs text-gray-300 rounded-full">AWS Lambda</span>
+                        <span class="px-3 py-1 bg-zinc-800 text-xs text-gray-300 rounded-full">Snowflake</span>
+                        <span class="px-3 py-1 bg-zinc-800 text-xs text-gray-300 rounded-full">dbt</span>
+                        <span class="px-3 py-1 bg-zinc-800 text-xs text-gray-300 rounded-full">Terraform</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 pt-4 border-t border-zinc-800">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-white hover:text-blue-400 flex items-center transition-colors">
+                        View Code
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="apple-card p-8 md:p-10 reveal-up delay-100 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-semibold uppercase tracking-wider text-purple-400">DevOps & Linux</span>
+                        <span class="text-xs text-[#86868b]">Open Source</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Hyprland & Neovim Workstation Dotfiles</h3>
+                    <p class="text-[#86868b] leading-relaxed mb-6">
+                        A minimalist, high-productivity Wayland environment written in Lua and Bash. Features customized Waybar, fluid window rules, and custom LSP workflows.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="px-3 py-1 bg-zinc-800 text-xs text-gray-300 rounded-full">Arch Linux</span>
+                        <span class="px-3 py-1 bg-zinc-800 text-xs text-gray-300 rounded-full">Hyprland</span>
+                        <span class="px-3 py-1 bg-zinc-800 text-xs text-gray-300 rounded-full">Neovim (Lua)</span>
+                        <span class="px-3 py-1 bg-zinc-800 text-xs text-gray-300 rounded-full">Waybar</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 pt-4 border-t border-zinc-800">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-white hover:text-purple-400 flex items-center transition-colors">
+                        View Repository
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="apple-card p-8 md:p-10 reveal-up flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-semibold uppercase tracking-wider text-green-400">Robotics & Systems</span>
+                        <span class="text-xs text-[#86868b]">Control Systems</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Asynchronous Robotics Telemetry Suite</h3>
+                    <p class="text-[#86868b] leading-relaxed mb-6">
+                        Real-time hardware control daemon designed in Python utilizing asyncio, zero-copy socket buffers, and low-latency feedback algorithms for sensor array feedback.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="px-3 py-1 bg-zinc-800 text-xs text-gray-300 rounded-full">Python</span>
+                        <span class="px-3 py-1 bg-zinc-800 text-xs text-gray-300 rounded-full">asyncio</span>
+                        <span class="px-3 py-1 bg-zinc-800 text-xs text-gray-300 rounded-full">WebSockets</span>
+                        <span class="px-3 py-1 bg-zinc-800 text-xs text-gray-300 rounded-full">Docker</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 pt-4 border-t border-zinc-800">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-white hover:text-green-400 flex items-center transition-colors">
+                        View Code
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="apple-card p-8 md:p-10 reveal-up delay-100 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-semibold uppercase tracking-wider text-orange-400">Photography</span>
+                        <span class="text-xs text-[#86868b]">Creative</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Solo Travel Visual Expedition</h3>
+                    <p class="text-[#86868b] leading-relaxed mb-6">
+                        Extensive photo series capturing alpine landscapes, remote urban architectures, and cultural documentation processed meticulously with Adobe Lightroom color profiles.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="px-3 py-1 bg-zinc-800 text-xs text-gray-300 rounded-full">Lightroom</span>
+                        <span class="px-3 py-1 bg-zinc-800 text-xs text-gray-300 rounded-full">Color Grading</span>
+                        <span class="px-3 py-1 bg-zinc-800 text-xs text-gray-300 rounded-full">Travel</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 pt-4 border-t border-zinc-800">
+                    <a href="../blog/index.html" class="text-sm font-semibold text-white hover:text-orange-400 flex items-center transition-colors">
+                        Explore Travel Stories
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800/50 py-12 px-6 mt-20">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-[#86868b]">
+            <p class="mb-4 md:mb-0">&copy; 2026 Tanner Thyes. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-white transition-colors">GitHub</a>
+                <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-white transition-colors">Twitter / X</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
