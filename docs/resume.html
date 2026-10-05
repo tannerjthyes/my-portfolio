@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume & Experience | Tanner Thyes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="antialiased selection:bg-gray-700 selection:text-white">
+
+    <!-- Frosted Navigation -->
+    <nav class="fixed top-0 w-full z-50 frosted-nav border-b border-gray-800/50">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center text-sm font-medium text-gray-300">
+            <a href="index.html" class="hover:text-white font-semibold transition-colors duration-300">Tanner Thyes</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-white transition-colors duration-300">Home</a>
+                <a href="resume.html" class="text-white font-semibold transition-colors duration-300">Resume</a>
+                <a href="projects/index.html" class="hover:text-white transition-colors duration-300">Projects</a>
+                <a href="blog/index.html" class="hover:text-white transition-colors duration-300">Blog</a>
+            </div>
+            <a href="mailto:contact@example.com" class="hover:text-white transition-colors duration-300">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Resume Header -->
+    <section class="pt-36 pb-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="reveal-up">
+                <span class="text-xs uppercase tracking-widest text-blue-400 font-semibold mb-3 block">Curriculum Vitae</span>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter-apple mb-6">
+                    Resume & Experience.
+                </h1>
+                <p class="text-xl text-[#86868b] max-w-2xl leading-relaxed mb-8">
+                    Cloud Architect & Data Engineer specializing in scalable AWS infrastructure, data modeling with dbt and Snowflake, and modern Linux workflows.
+                </p>
+                <div class="flex flex-wrap gap-4 items-center">
+                    <a href="assets/docs/README.md" download class="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-white text-black font-semibold text-sm hover:bg-gray-200 transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        <span>Download PDF Resume</span>
+                    </a>
+                    <a href="mailto:contact@example.com" class="px-6 py-3 rounded-full bg-zinc-800 text-white font-medium text-sm hover:bg-zinc-700 transition-colors border border-zinc-700/50">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto space-y-12">
+            <div class="border-b border-gray-800/80 pb-4">
+                <h2 class="text-2xl font-bold tracking-tight text-white">Work Experience</h2>
+            </div>
+
+            <!-- Job 1 -->
+            <div class="apple-card p-8 md:p-10 reveal-up">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white">Lead Cloud & Data Infrastructure Engineer</h3>
+                        <p class="text-blue-400 font-medium">Enterprise Cloud Systems</p>
+                    </div>
+                    <span class="text-sm font-semibold text-[#86868b] mt-2 md:mt-0">2023 &mdash; Present</span>
+                </div>
+                <p class="text-[#86868b] mb-6 leading-relaxed">
+                    Spearheaded enterprise migration to automated lakehouse infrastructure using Snowflake, AWS S3, and dbt. Engineered serverless event-driven ingestion pipelines handling millions of daily records.
+                </p>
+                <ul class="text-sm text-gray-300 space-y-2 list-disc list-inside">
+                    <li>Designed resilient AWS Lambda and SQS serverless pipelines with 99.99% uptime.</li>
+                    <li>Refactored legacy ETL scripts into modular, tested dbt models reducing compute costs by 35%.</li>
+                    <li>Integrated CI/CD deployments using GitHub Actions and Terraform infrastructure-as-code.</li>
+                </ul>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="apple-card p-8 md:p-10 reveal-up delay-100">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white">Software Engineer & Systems Specialist</h3>
+                        <p class="text-purple-400 font-medium">Applied Systems & Robotics</p>
+                    </div>
+                    <span class="text-sm font-semibold text-[#86868b] mt-2 md:mt-0">2020 &mdash; 2023</span>
+                </div>
+                <p class="text-[#86868b] mb-6 leading-relaxed">
+                    Developed high-performance backend microservices and robotics control modules in Python and Java. Optimized algorithmic efficiency and real-time sensor processing.
+                </p>
+                <ul class="text-sm text-gray-300 space-y-2 list-disc list-inside">
+                    <li>Constructed real-time robotics hardware communication interfaces using asynchronous Python.</li>
+                    <li>Designed backend Java services with robust unit and integration testing pipelines.</li>
+                    <li>Configured developer environments on Linux distributions to standardize team-wide tooling.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Breakdown -->
+    <section class="py-16 px-6 bg-black">
+        <div class="max-w-4xl mx-auto space-y-12">
+            <div class="border-b border-gray-800/80 pb-4">
+                <h2 class="text-2xl font-bold tracking-tight text-white">Technical Skills</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="apple-card p-8 reveal-up">
+                    <h3 class="text-lg font-bold text-white mb-3">Cloud & Architecture</h3>
+                    <p class="text-[#86868b] text-sm leading-relaxed mb-4">AWS (Lambda, S3, CloudWatch, IAM, SQS), Serverless Framework, Terraform, Architecture Planning.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-white">AWS Lambda</span>
+                        <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-white">Amazon S3</span>
+                        <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-white">Terraform</span>
+                    </div>
+                </div>
+
+                <div class="apple-card p-8 reveal-up delay-100">
+                    <h3 class="text-lg font-bold text-white mb-3">Data Engineering</h3>
+                    <p class="text-[#86868b] text-sm leading-relaxed mb-4">Snowflake, Amazon Redshift, dbt (data build tool), SQL Optimization, ETL/ELT pipelines.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-white">Snowflake</span>
+                        <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-white">dbt</span>
+                        <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-white">Redshift</span>
+                    </div>
+                </div>
+
+                <div class="apple-card p-8 reveal-up delay-200">
+                    <h3 class="text-lg font-bold text-white mb-3">Programming Languages</h3>
+                    <p class="text-[#86868b] text-sm leading-relaxed mb-4">Python (Automation & Robotics), Java (Enterprise Backend), SQL, Bash / Shell Scripting.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-white">Python</span>
+                        <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-white">Java</span>
+                        <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-white">SQL</span>
+                    </div>
+                </div>
+
+                <div class="apple-card p-8 reveal-up delay-300">
+                    <h3 class="text-lg font-bold text-white mb-3">Environment & Tooling</h3>
+                    <p class="text-[#86868b] text-sm leading-relaxed mb-4">Linux (Hyprland WM), Neovim, Git / GitHub Workflows, CI/CD Actions, Docker.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-white">Linux</span>
+                        <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-white">Neovim</span>
+                        <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-white">Git</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800/50 py-12 px-6">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-[#86868b]">
+            <p class="mb-4 md:mb-0">&copy; 2026 Tanner Thyes. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-white transition-colors">GitHub</a>
+                <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-white transition-colors">Twitter / X</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
