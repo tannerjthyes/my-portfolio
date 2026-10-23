@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Insights | Tanner Thyes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="antialiased selection:bg-gray-700 selection:text-white">
+
+    <!-- Frosted Navigation -->
+    <nav class="fixed top-0 w-full z-50 frosted-nav border-b border-gray-800/50">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center text-sm font-medium text-gray-300">
+            <a href="../index.html" class="hover:text-white font-semibold transition-colors duration-300">Tanner Thyes</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="../index.html" class="hover:text-white transition-colors duration-300">Home</a>
+                <a href="../resume.html" class="hover:text-white transition-colors duration-300">Resume</a>
+                <a href="../projects/index.html" class="hover:text-white transition-colors duration-300">Projects</a>
+                <a href="index.html" class="text-white font-semibold transition-colors duration-300">Blog</a>
+            </div>
+            <a href="mailto:contact@example.com" class="hover:text-white transition-colors duration-300">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="pt-36 pb-12 px-6">
+        <div class="max-w-6xl mx-auto text-center reveal-up">
+            <span class="text-xs uppercase tracking-widest text-blue-400 font-semibold mb-3 block">Writings & Thoughts</span>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tighter-apple mb-6">
+                The Engineering Journal.
+            </h1>
+            <p class="text-xl text-[#86868b] max-w-2xl mx-auto mb-8">
+                Reflections on scalable cloud systems, terminal setups, Linux environments, and global expeditions.
+            </p>
+            <button id="toggle-blog-form" class="px-6 py-2.5 rounded-full bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-medium transition-colors border border-zinc-700/50 shadow-lg cursor-pointer">
+                + Add New Post
+            </button>
+        </div>
+    </section>
+
+    <!-- Collapsible Form -->
+    <div class="max-w-6xl mx-auto px-6">
+        <div id="blog-form-container" class="hidden apple-card p-8 mb-16 max-w-2xl mx-auto border border-zinc-800">
+            <h3 class="text-2xl font-bold text-white mb-6">Create New Blog Post</h3>
+            <form id="new-blog-form" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-[#86868b] mb-2">Post Title</label>
+                    <input type="text" id="blog-title" required class="w-full bg-black border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="e.g., Scaling Kubernetes Clusters">
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-[#86868b] mb-2">Category</label>
+                        <input type="text" id="blog-category" required class="w-full bg-black border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="e.g., Cloud Engineering">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-[#86868b] mb-2">Image URL (Optional)</label>
+                        <input type="text" id="blog-image" class="w-full bg-black border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="https://placehold.co/600x400/...">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-[#86868b] mb-2">Article Link (Optional)</label>
+                    <input type="text" id="blog-url" class="w-full bg-black border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="first-post.html" value="#">
+                </div>
+                <div class="flex justify-end space-x-4 pt-4">
+                    <button type="button" id="cancel-blog-form" class="px-5 py-2.5 rounded-full bg-transparent hover:bg-zinc-800 text-[#86868b] hover:text-white text-sm font-medium transition-colors cursor-pointer">Cancel</button>
+                    <button type="submit" class="px-6 py-2.5 rounded-full bg-white hover:bg-gray-200 text-black text-sm font-semibold transition-colors cursor-pointer">Publish Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Blog Posts Grid -->
+    <section class="py-12 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <a href="first-post.html" class="group block reveal-up">
+                    <div class="apple-card overflow-hidden h-full flex flex-col">
+                        <div class="h-48 w-full bg-zinc-800 relative overflow-hidden">
+                            <img src="https://placehold.co/600x400/18181b/ffffff?text=AWS+Architecture" alt="AWS Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-8 flex-grow flex flex-col justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-3">Cloud Engineering</p>
+                                <h3 class="text-xl font-bold text-white mb-4 leading-snug group-hover:text-blue-400 transition-colors">Mastering AWS S3 & Lambda Deployments</h3>
+                                <p class="text-[#86868b] text-sm leading-relaxed mb-4">Deep dive into building event-driven zero-maintenance ingestion pipelines with AWS S3 notifications and Lambda functions.</p>
+                            </div>
+                            <p class="text-[#86868b] text-sm mt-4 font-medium flex items-center">
+                                Read article 
+                                <svg class="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Blog Post 2 -->
+                <a href="#" class="group block reveal-up delay-100">
+                    <div class="apple-card overflow-hidden h-full flex flex-col">
+                        <div class="h-48 w-full bg-zinc-800 relative overflow-hidden">
+                            <img src="https://placehold.co/600x400/18181b/ffffff?text=Solo+Travel" alt="Travel Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-8 flex-grow flex flex-col justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-orange-400 uppercase tracking-wider mb-3">Life & Travel</p>
+                                <h3 class="text-xl font-bold text-white mb-4 leading-snug group-hover:text-orange-400 transition-colors">From Chiang Mai to Athens: How Solo Travel Shaped My Engineering Mindset</h3>
+                                <p class="text-[#86868b] text-sm leading-relaxed mb-4">Why navigating unfamiliar subway networks, solo mountain treks, and cultural barriers enhances systems design.</p>
+                            </div>
+                            <p class="text-[#86868b] text-sm mt-4 font-medium flex items-center">
+                                Read article 
+                                <svg class="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Blog Post 3 -->
+                <a href="#" class="group block reveal-up delay-200">
+                    <div class="apple-card overflow-hidden h-full flex flex-col">
+                        <div class="h-48 w-full bg-zinc-800 relative overflow-hidden">
+                            <img src="https://placehold.co/600x400/18181b/ffffff?text=Linux+Workspace" alt="Linux Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-8 flex-grow flex flex-col justify-between">
+                            <div>
+                                <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-3">Workspace Setup</p>
+                                <h3 class="text-xl font-bold text-white mb-4 leading-snug group-hover:text-purple-400 transition-colors">Building the Perfect Hyprland & Neovim Workspace</h3>
+                                <p class="text-[#86868b] text-sm leading-relaxed mb-4">A complete tour through my Wayland config, custom window animations, and keyboard-centric development flow.</p>
+                            </div>
+                            <p class="text-[#86868b] text-sm mt-4 font-medium flex items-center">
+                                Read article 
+                                <svg class="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800/50 py-12 px-6 mt-20">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-[#86868b]">
+            <p class="mb-4 md:mb-0">&copy; 2026 Tanner Thyes. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-white transition-colors">GitHub</a>
+                <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-white transition-colors">Twitter / X</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

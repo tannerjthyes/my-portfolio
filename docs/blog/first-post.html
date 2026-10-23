@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering AWS S3 & Lambda Deployments | Tanner Thyes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="antialiased selection:bg-gray-700 selection:text-white">
+
+    <!-- Frosted Navigation -->
+    <nav class="fixed top-0 w-full z-50 frosted-nav border-b border-gray-800/50">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center text-sm font-medium text-gray-300">
+            <a href="../index.html" class="hover:text-white font-semibold transition-colors duration-300">Tanner Thyes</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="../index.html" class="hover:text-white transition-colors duration-300">Home</a>
+                <a href="../resume.html" class="hover:text-white transition-colors duration-300">Resume</a>
+                <a href="../projects/index.html" class="hover:text-white transition-colors duration-300">Projects</a>
+                <a href="index.html" class="text-white font-semibold transition-colors duration-300">Blog</a>
+            </div>
+            <a href="mailto:contact@example.com" class="hover:text-white transition-colors duration-300">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Post Content Container -->
+    <article class="pt-36 pb-20 px-6 max-w-3xl mx-auto">
+        
+        <!-- Back Link -->
+        <div class="mb-10 reveal-up">
+            <a href="index.html" class="inline-flex items-center text-sm font-medium text-[#86868b] hover:text-white transition-colors">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back to all articles
+            </a>
+        </div>
+
+        <!-- Article Header -->
+        <header class="mb-12 reveal-up">
+            <div class="flex items-center space-x-3 text-xs uppercase tracking-wider text-blue-400 font-semibold mb-4">
+                <span>Cloud Engineering</span>
+                <span>&bull;</span>
+                <span class="text-[#86868b]">6 min read</span>
+                <span>&bull;</span>
+                <span class="text-[#86868b]">October 2026</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tighter-apple leading-tight text-white mb-6">
+                Mastering AWS S3 & Lambda Deployments
+            </h1>
+            <p class="text-xl text-[#86868b] leading-relaxed">
+                Architecting resilient, cost-effective serverless ingestion pipelines without provisioning a single server.
+            </p>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="apple-card overflow-hidden mb-12 reveal-up delay-100">
+            <img src="https://placehold.co/1200x600/18181b/ffffff?text=AWS+S3+%2B+Lambda+Architecture" alt="Architecture Diagram" class="w-full h-auto object-cover">
+        </div>
+
+        <!-- Article Body -->
+        <div class="space-y-8 text-lg text-gray-300 leading-relaxed font-normal reveal-up">
+            <p>
+                When building modern data platforms, the friction of maintaining always-on compute instances for sporadic workloads is one of the highest invisible costs an engineering team can incur. Between patching OS dependencies, managing auto-scaling groups, and paying for idle CPU cycles, server-based solutions often demand more maintenance than the business logic itself.
+            </p>
+
+            <h2 class="text-2xl md:text-3xl font-bold text-white pt-6 tracking-tight">The Power of Event-Driven Triggers</h2>
+            <p>
+                By shifting to an event-driven model using <span class="text-white font-medium">Amazon S3 Event Notifications</span> combined with <span class="text-white font-medium">AWS Lambda</span>, your system only wakes up when there is actual work to be performed. When a new batch of raw JSON or Parquet files lands in an S3 bucket, S3 emits an <code class="text-blue-400 bg-zinc-900 px-2 py-0.5 rounded text-sm font-mono">s3:ObjectCreated:*</code> notification directly to a subscribed Lambda function or an intermediary SQS queue.
+            </p>
+
+            <div class="apple-card p-6 bg-zinc-900/60 border border-zinc-800 my-8">
+                <p class="text-sm font-semibold uppercase tracking-wider text-zinc-400 mb-2 font-mono">Core Takeaway</p>
+                <p class="text-white font-medium italic">
+                    "Decouple file arrival from file ingestion. Never poll an S3 bucket when S3 is willing to push notifications to you for free."
+                </p>
+            </div>
+
+            <h2 class="text-2xl md:text-3xl font-bold text-white pt-6 tracking-tight">Safeguarding Against Concurrency Bursts</h2>
+            <p>
+                A common pitfall with direct S3-to-Lambda integrations is concurrency throttling. If an upstream batch job uploads 50,000 files in parallel, direct invocation triggers 50,000 simultaneous Lambda executions, which will quickly exhaust regional concurrency limits and overwhelm downstream databases like Snowflake or Redshift.
+            </p>
+            <p>
+                The production-grade pattern introduces an <strong>Amazon SQS (Simple Queue Service) FIFO or standard buffer</strong> between S3 and Lambda. Lambda polls SQS with a controlled batch size and concurrency threshold, ensuring downstream persistence layers never experience connection spikes or rate limiting.
+            </p>
+
+            <h2 class="text-2xl md:text-3xl font-bold text-white pt-6 tracking-tight">Conclusion & Next Steps</h2>
+            <p>
+                Modern cloud engineering is about leveraging managed primitives that scale horizontally to zero and require zero operational toil. In the next writeup, we will explore managing this entire stack declaratively with Terraform and integrating dbt Cloud webhooks for post-ingestion transformations.
+            </p>
+        </div>
+
+        <!-- Author Card -->
+        <div class="apple-card p-8 mt-16 flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 border border-zinc-800 reveal-up">
+            <div class="w-16 h-16 rounded-full bg-zinc-700 flex-shrink-0 flex items-center justify-center text-xl font-bold text-white">
+                TT
+            </div>
+            <div>
+                <h4 class="text-lg font-bold text-white">Tanner Thyes</h4>
+                <p class="text-[#86868b] text-sm leading-relaxed">
+                    Cloud Architect & Data Engineer passionate about distributed systems, Linux minimalism, and solo photography expeditions.
+                </p>
+            </div>
+        </div>
+
+        <!-- Next Post Link -->
+        <div class="mt-12 text-center reveal-up">
+            <a href="index.html" class="inline-flex items-center space-x-2 text-white hover:text-blue-400 font-medium transition-colors">
+                <span>View More Articles in The Journal</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+        </div>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800/50 py-12 px-6">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-[#86868b]">
+            <p class="mb-4 md:mb-0">&copy; 2026 Tanner Thyes. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-white transition-colors">GitHub</a>
+                <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-white transition-colors">Twitter / X</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
