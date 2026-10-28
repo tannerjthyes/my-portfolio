@@ -10,19 +10,40 @@
 <body class="antialiased selection:bg-gray-700 selection:text-white">
 
     <!-- Frosted Navigation -->
-    <nav class="fixed top-0 w-full z-50 frosted-nav border-b border-gray-800/50">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center text-sm font-medium text-gray-300">
-            <a href="../index.html" class="hover:text-white font-semibold transition-colors duration-300">Tanner Thyes</a>
-            <div class="hidden md:flex space-x-8">
-                <a href="../index.html" class="hover:text-white transition-colors duration-300">Home</a>
-                <a href="../resume.html" class="hover:text-white transition-colors duration-300">Resume</a>
-                <a href="../projects/index.html" class="hover:text-white transition-colors duration-300">Projects</a>
-                <a href="index.html" class="text-white font-semibold transition-colors duration-300">Blog</a>
-            </div>
-            <a href="mailto:contact@example.com" class="hover:text-white transition-colors duration-300">Contact</a>
-        </div>
-    </nav>
+<nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center text-sm font-medium text-gray-300">
+        <a href="../index.html" class="text-white font-semibold tracking-tight hover:opacity-90">
+            Tanner Thyes
+        </a>
 
+        <div class="hidden md:flex items-center space-x-2">
+            <a href="../index.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Overview</a>
+            <a href="../resume.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Resume</a>
+            <a href="../projects/index.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Projects</a>
+            <a href="index.html" aria-current="page" class="px-3.5 py-1.5 rounded-full bg-white/10 text-white font-semibold">Journal</a>
+        </div>
+
+        <a href="mailto:contact@example.com" class="hidden md:inline-flex items-center px-4 py-1.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-gray-200">
+            Contact
+        </a>
+
+        <button id="mobile-menu-btn" aria-label="Toggle navigation menu" class="md:hidden p-2 text-gray-300 hover:text-white focus:outline-none cursor-pointer">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-black/95 border-b border-gray-800">
+        <div class="flex flex-col px-6 py-4 space-y-3 text-center text-sm">
+            <a href="../index.html" class="py-2 rounded-lg text-gray-300 hover:text-white">Overview</a>
+            <a href="../resume.html" class="py-2 rounded-lg text-gray-300 hover:text-white">Resume</a>
+            <a href="../projects/index.html" class="py-2 rounded-lg text-gray-300 hover:text-white">Projects</a>
+            <a href="index.html" class="py-2 rounded-lg bg-white/10 text-white font-semibold">Journal</a>
+            <a href="mailto:contact@example.com" class="py-2 mt-2 rounded-full bg-white text-black font-semibold">Contact</a>
+        </div>
+    </div>
+</nav>
     <!-- Post Content Container -->
     <article class="pt-36 pb-20 px-6 max-w-3xl mx-auto">
         
