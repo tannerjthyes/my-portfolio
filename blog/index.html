@@ -10,48 +10,46 @@
 <body class="antialiased selection:bg-gray-700 selection:text-white">
 
     <!-- Frosted Navigation -->
-<nav class="fixed top-0 w-full z-50 frosted-nav">
-    <div class="max-w-[92vw] mx-auto px-6 py-3.5 flex justify-between items-center text-sm font-medium text-gray-300">
-        <a href="../index.html" class="text-white font-semibold tracking-tight px-2 py-1 -mx-2 rounded-lg hover:opacity-90">
-            Tanner Thyes
-        </a>
+    <nav class="fixed top-0 w-full z-50 frosted-nav">
+        <div class="max-w-5xl mx-auto px-6 py-3.5 flex justify-between items-center text-sm font-medium text-gray-300">
+            <a href="../index.html" class="text-white font-semibold tracking-tight px-2 py-1 -mx-2 rounded-lg hover:opacity-90">
+                Tanner Thyes
+            </a>
 
-        <!-- Desktop Wayfinding Links -->
-        <div class="hidden md:flex items-center space-x-2">
-            <a href="../index.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Overview</a>
-            <a href="../resume.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Resume</a>
-            <a href="../projects/index.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Projects</a>
-            <a href="index.html" aria-current="page" class="px-3.5 py-1.5 rounded-full bg-white/10 text-white font-semibold">Journal</a>
+            <div class="hidden md:flex items-center space-x-2">
+                <a href="../index.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Overview</a>
+                <a href="../resume.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Resume</a>
+                <a href="../projects/index.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Projects</a>
+                <a href="index.html" aria-current="page" class="px-3.5 py-1.5 rounded-full bg-white/10 text-white font-semibold">Journal</a>
+            </div>
+
+            <a href="mailto:contact@example.com" class="hidden md:inline-flex items-center px-4 py-1.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-gray-200">
+                Contact
+            </a>
+
+            <button id="mobile-menu-btn" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden p-2 -mr-2 text-gray-300 hover:text-white focus:outline-none cursor-pointer">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
 
-        <a href="mailto:contact@example.com" class="hidden md:inline-flex items-center px-4 py-1.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-gray-200">
-            Contact
-        </a>
-
-        <!-- Mobile Menu Trigger -->
-        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden p-2 -mr-2 text-gray-300 hover:text-white focus:outline-none cursor-pointer">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
-    </div>
-
-    <!-- Mobile Sheet Dropdown -->
-    <div id="mobile-menu" class="hidden md:hidden frosted-nav border-t border-white/10">
-        <div class="flex flex-col px-6 py-5 space-y-3 text-center text-base">
-            <a href="../index.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Overview</a>
-            <a href="../resume.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Resume</a>
-            <a href="../projects/index.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Projects</a>
-            <a href="index.html" class="py-2 rounded-xl bg-white/10 text-white font-semibold">Journal</a>
-            <a href="mailto:contact@example.com" class="py-2.5 mt-2 rounded-full bg-white text-black font-semibold">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden frosted-nav border-t border-white/10">
+            <div class="flex flex-col px-6 py-5 space-y-3 text-center text-base">
+                <a href="../index.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Overview</a>
+                <a href="../resume.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Resume</a>
+                <a href="../projects/index.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Projects</a>
+                <a href="index.html" class="py-2 rounded-xl bg-white/10 text-white font-semibold">Journal</a>
+                <a href="mailto:contact@example.com" class="py-2.5 mt-2 rounded-full bg-white text-black font-semibold">Contact</a>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+
     <!-- Header -->
     <section class="pt-36 pb-12 px-6">
         <div class="max-w-6xl mx-auto text-center reveal-up">
             <span class="text-xs uppercase tracking-widest text-blue-400 font-semibold mb-3 block">Writings & Thoughts</span>
-            <h1 class="text-5xl md:text-7xl font-bold tracking-tighter-apple mb-6">
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tighter-apple mb-6 text-gradient">
                 The Engineering Journal.
             </h1>
             <p class="text-xl text-[#86868b] max-w-2xl mx-auto mb-8">
@@ -84,7 +82,7 @@
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-[#86868b] mb-2">Article Link (Optional)</label>
-                    <input type="text" id="blog-url" class="w-full bg-black border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="first-post.html" value="#">
+                    <input type="text" id="blog-url" class="w-full bg-black border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="first-post.html">
                 </div>
                 <div class="flex justify-end space-x-4 pt-4">
                     <button type="button" id="cancel-blog-form" class="px-5 py-2.5 rounded-full bg-transparent hover:bg-zinc-800 text-[#86868b] hover:text-white text-sm font-medium transition-colors cursor-pointer">Cancel</button>
@@ -102,7 +100,7 @@
                 <a href="first-post.html" class="group block reveal-up">
                     <div class="apple-card overflow-hidden h-full flex flex-col">
                         <div class="h-48 w-full bg-zinc-800 relative overflow-hidden">
-                            <img src="https://placehold.co/600x400/18181b/ffffff?text=AWS+Architecture" alt="AWS Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <img src="https://placehold.co/600x400/18181b/ffffff?text=AWS+Architecture" alt="AWS Post" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
                         <div class="p-8 flex-grow flex flex-col justify-between">
                             <div>
@@ -119,10 +117,10 @@
                 </a>
 
                 <!-- Blog Post 2 -->
-                <a href="#" class="group block reveal-up delay-100">
+                <a href="../blog-post.html?post=solo-travel" class="group block reveal-up delay-100">
                     <div class="apple-card overflow-hidden h-full flex flex-col">
                         <div class="h-48 w-full bg-zinc-800 relative overflow-hidden">
-                            <img src="https://placehold.co/600x400/18181b/ffffff?text=Solo+Travel" alt="Travel Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <img src="https://placehold.co/600x400/18181b/ffffff?text=Solo+Travel" alt="Travel Post" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
                         <div class="p-8 flex-grow flex flex-col justify-between">
                             <div>
@@ -139,10 +137,10 @@
                 </a>
 
                 <!-- Blog Post 3 -->
-                <a href="#" class="group block reveal-up delay-200">
+                <a href="../blog-post.html?post=hyprland-neovim" class="group block reveal-up delay-200">
                     <div class="apple-card overflow-hidden h-full flex flex-col">
                         <div class="h-48 w-full bg-zinc-800 relative overflow-hidden">
-                            <img src="https://placehold.co/600x400/18181b/ffffff?text=Linux+Workspace" alt="Linux Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <img src="https://placehold.co/600x400/18181b/ffffff?text=Linux+Workspace" alt="Linux Post" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
                         <div class="p-8 flex-grow flex flex-col justify-between">
                             <div>
@@ -166,7 +164,7 @@
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-[#86868b]">
             <p class="mb-4 md:mb-0">&copy; 2026 Tanner Thyes. All rights reserved.</p>
             <div class="flex space-x-6">
-                <a href="#" class="hover:text-white transition-colors">GitHub</a>
+                <a href="https://github.com/tannerjthyes" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub</a>
                 <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
                 <a href="#" class="hover:text-white transition-colors">Twitter / X</a>
             </div>
