@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,45 +10,42 @@
 <body class="antialiased selection:bg-gray-700 selection:text-white">
 
     <!-- Frosted Navigation -->
-<nav class="fixed top-0 w-full z-50 frosted-nav">
-    <div class="max-w-[92vw] mx-auto px-6 py-3.5 flex justify-between items-center text-sm font-medium text-gray-300">
-        <a href="index.html" class="text-white font-semibold tracking-tight px-2 py-1 -mx-2 rounded-lg hover:opacity-90">
-            Tanner Thyes
-        </a>
+    <nav class="fixed top-0 w-full z-50 frosted-nav">
+        <div class="max-w-5xl mx-auto px-6 py-3.5 flex justify-between items-center text-sm font-medium text-gray-300">
+            <a href="index.html" class="text-white font-semibold tracking-tight px-2 py-1 -mx-2 rounded-lg hover:opacity-90">
+                Tanner Thyes
+            </a>
 
-        <!-- Desktop Wayfinding Links -->
-        <div class="hidden md:flex items-center space-x-2">
-            <a href="index.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Overview</a>
-            <a href="resume.html" aria-current="page" class="px-3.5 py-1.5 rounded-full bg-white/10 text-white font-semibold">Resume</a>
-            <a href="projects/index.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Projects</a>
-            <a href="blog/index.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Journal</a>
+            <div class="hidden md:flex items-center space-x-2">
+                <a href="index.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Overview</a>
+                <a href="resume.html" aria-current="page" class="px-3.5 py-1.5 rounded-full bg-white/10 text-white font-semibold">Resume</a>
+                <a href="projects/index.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Projects</a>
+                <a href="blog/index.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Journal</a>
+            </div>
+
+            <a href="mailto:contact@example.com" class="hidden md:inline-flex items-center px-4 py-1.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-gray-200">
+                Contact
+            </a>
+
+            <button id="mobile-menu-btn" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden p-2 -mr-2 text-gray-300 hover:text-white focus:outline-none cursor-pointer">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
 
-        <a href="mailto:contact@example.com" class="hidden md:inline-flex items-center px-4 py-1.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-gray-200">
-            Contact
-        </a>
-
-        <!-- Mobile Menu Trigger -->
-        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden p-2 -mr-2 text-gray-300 hover:text-white focus:outline-none cursor-pointer">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
-    </div>
-
-    <!-- Mobile Sheet Dropdown -->
-    <div id="mobile-menu" class="hidden md:hidden frosted-nav border-t border-white/10">
-        <div class="flex flex-col px-6 py-5 space-y-3 text-center text-base">
-            <a href="index.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Overview</a>
-            <a href="resume.html" class="py-2 rounded-xl bg-white/10 text-white font-semibold">Resume</a>
-            <a href="projects/index.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Projects</a>
-            <a href="blog/index.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Journal</a>
-            <a href="mailto:contact@example.com" class="py-2.5 mt-2 rounded-full bg-white text-black font-semibold">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden frosted-nav border-t border-white/10">
+            <div class="flex flex-col px-6 py-5 space-y-3 text-center text-base">
+                <a href="index.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Overview</a>
+                <a href="resume.html" class="py-2 rounded-xl bg-white/10 text-white font-semibold">Resume</a>
+                <a href="projects/index.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Projects</a>
+                <a href="blog/index.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Journal</a>
+                <a href="mailto:contact@example.com" class="py-2.5 mt-2 rounded-full bg-white text-black font-semibold">Contact</a>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+
     <!-- Resume Header -->
- <!-- Resume Header -->
     <section class="pt-36 pb-16 px-6">
         <div class="max-w-4xl mx-auto">
             <div class="reveal-up">
@@ -80,7 +79,7 @@
                         <h3 class="text-2xl font-bold text-white">Purdue University</h3>
                         <p class="text-blue-400 font-medium">Bachelor of Science in Computer Engineering</p>
                     </div>
-                    <div class="text-right mt-2 md:mt-0">
+                    <div class="md:text-right mt-2 md:mt-0">
                         <span class="text-sm font-semibold text-white block">Aug 2021 &mdash; Dec 2025</span>
                         <span class="text-sm text-[#86868b]">GPA: 3.68/4.00</span>
                     </div>
@@ -93,7 +92,7 @@
                         <h3 class="text-2xl font-bold text-white">Butler University</h3>
                         <p class="text-purple-400 font-medium">Bachelor of Arts in Economics</p>
                     </div>
-                    <div class="text-right mt-2 md:mt-0">
+                    <div class="md:text-right mt-2 md:mt-0">
                         <span class="text-sm font-semibold text-white block">Aug 2021 &mdash; Dec 2025</span>
                         <span class="text-sm text-[#86868b]">GPA: 3.97/4.00</span>
                     </div>
@@ -187,7 +186,6 @@
                         <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-white border border-zinc-700">SQL</span>
                     </div>
                 </div>
-
                 <div class="apple-card p-8 reveal-up delay-100">
                     <h3 class="text-lg font-bold text-white mb-3">Technologies & Frameworks</h3>
                     <div class="flex flex-wrap gap-2 mt-4">
@@ -200,7 +198,6 @@
                         <span class="px-3 py-1 bg-zinc-800 rounded-full text-xs text-white border border-zinc-700">Maven</span>
                     </div>
                 </div>
-
                 <div class="apple-card p-8 reveal-up delay-200 md:col-span-2">
                     <h3 class="text-lg font-bold text-white mb-3">Certifications</h3>
                     <div class="space-y-3 mt-4">
@@ -216,14 +213,14 @@
                 </div>
             </div>
         </div>
-    </section
+    </section>
 
-   <!-- Footer -->
+    <!-- Footer -->
     <footer class="border-t border-gray-800/50 py-12 px-6">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-[#86868b]">
             <p class="mb-4 md:mb-0">&copy; 2026 Tanner Thyes. All rights reserved.</p>
             <div class="flex space-x-6">
-                <a href="#" class="hover:text-white transition-colors">GitHub</a>
+                <a href="https://github.com/tannerjthyes" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub</a>
                 <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
                 <a href="#" class="hover:text-white transition-colors">Twitter / X</a>
             </div>
