@@ -9,107 +9,99 @@
 </head>
 <body class="antialiased selection:bg-gray-700 selection:text-white">
 
+    <!-- Frosted Navigation -->
     <nav class="fixed top-0 w-full z-50 frosted-nav">
-    <div class="max-w-[92vw] mx-auto px-6 py-3.5 flex justify-between items-center text-sm font-medium text-gray-300">
-        <a href="index.html" class="text-white font-semibold tracking-tight px-2 py-1 -mx-2 rounded-lg hover: opacity-90">
-            Tanner Thyes
-        </a>
+        <div class="max-w-5xl mx-auto px-6 py-3.5 flex justify-between items-center text-sm font-medium text-gray-300">
+            <a href="index.html" class="text-white font-semibold tracking-tight px-2 py-1 -mx-2 rounded-lg hover:opacity-90">
+                Tanner Thyes
+            </a>
 
-        <!-- Desktop Wayfinding Links with Hit Padding -->
-        <div class="hidden md:flex items-center space-x-2">
-            <a href="index.html" aria-current="page" class="px-3.5 py-1.5 rounded-full bg-white/10 text-white font-semibold">Overview</a>
-            <a href="resume.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Resume</a>
-            <a href="projects/index.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Projects</a>
-            <a href="blog/index.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Journal</a>
+            <div class="hidden md:flex items-center space-x-2">
+                <a href="index.html" aria-current="page" class="px-3.5 py-1.5 rounded-full bg-white/10 text-white font-semibold">Overview</a>
+                <a href="resume.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Resume</a>
+                <a href="projects/index.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Projects</a>
+                <a href="blog/index.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Journal</a>
+            </div>
+
+            <a href="mailto:contact@example.com" class="hidden md:inline-flex items-center px-4 py-1.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-gray-200">
+                Contact
+            </a>
+
+            <button id="mobile-menu-btn" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden p-2 -mr-2 text-gray-300 hover:text-white focus:outline-none cursor-pointer">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
 
-        <a href="mailto:contact@example.com" class="hidden md:inline-flex items-center px-4 py-1.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-gray-200">
-            Contact
-        </a>
-
-        <!-- Mobile Menu Trigger -->
-        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden p-2 -mr-2 text-gray-300 hover:text-white focus:outline-none cursor-pointer">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
-    </div>
-
-    <!-- Mobile Sheet Dropdown (Supports 1:1 Drag-to-Dismiss) -->
-    <div id="mobile-menu" class="hidden md:hidden frosted-nav border-t border-white/10">
-        <div class="flex flex-col px-6 py-5 space-y-3 text-center text-base">
-            <a href="index.html" class="py-2 rounded-xl bg-white/10 text-white font-semibold">Overview</a>
-            <a href="resume.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Resume</a>
-            <a href="projects/index.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Projects</a>
-            <a href="blog/index.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Journal</a>
-            <a href="mailto:contact@example.com" class="py-2.5 mt-2 rounded-full bg-white text-black font-semibold">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden frosted-nav border-t border-white/10">
+            <div class="flex flex-col px-6 py-5 space-y-3 text-center text-base">
+                <a href="index.html" class="py-2 rounded-xl bg-white/10 text-white font-semibold">Overview</a>
+                <a href="resume.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Resume</a>
+                <a href="projects/index.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Projects</a>
+                <a href="blog/index.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Journal</a>
+                <a href="mailto:contact@example.com" class="py-2.5 mt-2 rounded-full bg-white text-black font-semibold">Contact</a>
+            </div>
         </div>
-    </div>
-</nav>
-    
+    </nav>
+
+    <!-- Hero Section -->
     <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
-        <div class="max-w-[92vw] mx-auto reveal-up">
-            <h1 class="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter-apple mb-6">
+        <div class="max-w-5xl mx-auto reveal-up">
+            <h1 class="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter-apple mb-6 text-gradient">
                 Tanner Thyes
             </h1>
             <p class="text-2xl md:text-4xl font-semibold text-[#86868b] tracking-tight max-w-2xl mx-auto">
-                Architecting Excellence in Systems. <br class="hidden md:block"> Driven by Relentless Curiosity.
-          <br class="hidden md:block"> Exploring the World.
+                Architecting Excellence in Systems. <br class="hidden md:block">
+                Driven by Relentless Curiosity. <br class="hidden md:block">
+                Exploring the World.
             </p>
         </div>
     </section>
- 
-    <section id="about" class="py-32 px-6 bg-black relative overflow-hidden">
-    <!-- Ambient back-glow -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
-    
-    <div class="max-w-4xl mx-auto relative z-10">
-        <!-- Title -->
-        <div class="text-center mb-16 reveal-up">
-            <span class="text-xs uppercase tracking-widest text-blue-400 font-semibold mb-3 block">About Me</span>
-            <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-white">
-                Hi, I'm Tanner.
-            </h2>
-        </div>
 
-        <!-- Landscape Image Section -->
-        <div class="reveal-up delay-100 mb-16">
-            <div class="relative group">
-                <!-- Ambient outer glow behind image -->
-                <div class="absolute -inset-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-                
-                <div class="relative aspect-[3/2] md:aspect-[16/10] rounded-3xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-2xl">
-                    <!-- Be sure to save the new image to this path -->
-                    <img src="assets/images/about-tanner.png" alt="Tanner with elephants in Chiang Mai, Thailand" class="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 transition-all duration-700 ease-out">
+    <!-- About Section -->
+    <section id="about" class="py-32 px-6 bg-black relative overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="text-center mb-16 reveal-up">
+                <span class="text-xs uppercase tracking-widest text-blue-400 font-semibold mb-3 block">About Me</span>
+                <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-white">
+                    Hi, I'm Tanner.
+                </h2>
+            </div>
+
+            <div class="reveal-up delay-100 mb-16">
+                <div class="relative group">
+                    <div class="absolute -inset-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+                    <div class="relative aspect-[3/2] md:aspect-[16/10] rounded-3xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-2xl">
+                        <img src="assets/images/about-tanner.png" alt="Tanner with elephants in Chiang Mai, Thailand" decoding="async" class="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 transition-all duration-700 ease-out">
+                    </div>
+                    <p class="text-xs text-[#86868b] mt-4 text-center italic">
+                        Chiang Mai, Thailand.
+                    </p>
                 </div>
-                
-                <!-- Caption -->
-                <p class="text-xs text-[#86868b] mt-4 text-center italic">
-                    Chiang Mai, Thailand. 
+            </div>
+
+            <div class="space-y-8 text-xl md:text-2xl leading-relaxed text-[#86868b] font-medium reveal-up delay-200 max-w-3xl mx-auto">
+                <p class="hover:text-white transition-colors duration-500">
+                    I am a software engineer with a dual-degree foundation in <span class="text-white">Computer Engineering</span> and <span class="text-white">Economics</span>.
+                </p>
+                <p class="hover:text-white transition-colors duration-500">
+                    Recently, I have been focused on infrastructure as code and cloud architecture, actively preparing for <span class="text-white">AWS certifications</span>.
+                    In my workspace, I rely on a customized keyboard-driven <span class="text-white">Linux environment</span> centered around Neovim configurations and Hyprland for the ideal
+                    terminal-driven, distraction-free workflow.
+                </p>
+                <p class="hover:text-white transition-colors duration-500">
+                    When I step away from the keyboard, I pursue an eclectic set of interests: solo travel, building hardline liquid cooled PCs, hiking trails, aviation, stationery, and optimizing personal finance systems.
                 </p>
             </div>
         </div>
+    </section>
 
-        <!-- Bio Content -->
-        <div class="space-y-8 text-xl md:text-2xl leading-relaxed text-[#86868b] font-medium reveal-up delay-200 max-w-3xl mx-auto">
-            <p class="hover:text-white transition-colors duration-500">
-                I am a software engineer with a dual-degree foundation in <span class="text-white">Computer Engineering</span> and <span class="text-white">Economics</span>.
-            </p>
-            <p class="hover:text-white transition-colors duration-500">
-                Recently, I have been focused on infrastructure as code and cloud architecture, actively preparing for <span class="text-white">AWS certifications</span>.
-                In my workspace, I rely on a customized keyboard-driven <span class="text-white">Linux environment</span> centered around Neovim configurations and Hyprland for the ideal
-                terminal-driven, distraction-free workflow.
-            </p>
-            <p class="hover:text-white transition-colors duration-500">
-                When I step away from the keyboard, I pursue an eclectic set of interests: solo travel, building hardline liquid cooled PCs, hiking trails, aviation, stationery, and optimizing personal finance systems.
-            </p>
-        </div>
-    </div>
-</section>
-
-</section>  
+    <!-- Experience / Technical Expertise -->
     <section id="experience" class="py-32 px-6">
-        <div class="max-w-[92vw] mx-auto">
+        <div class="max-w-5xl mx-auto">
             <h2 class="text-4xl md:text-6xl font-bold tracking-tight mb-20 text-center reveal-up">
                 Technical Expertise.
             </h2>
@@ -124,7 +116,6 @@
                         <li>HTML/CSS, JavaScript, SQL</li>
                     </ul>
                 </div>
-
                 <div class="apple-card p-10 reveal-up delay-100">
                     <h3 class="text-2xl font-bold text-white mb-4">Frameworks & Tooling</h3>
                     <p class="text-[#86868b] text-lg mb-6">Managing environments, testing, and modern application development.</p>
@@ -134,7 +125,6 @@
                         <li>Bruno, JUnit, Mockito</li>
                     </ul>
                 </div>
-
                 <div class="apple-card p-10 reveal-up delay-200">
                     <h3 class="text-2xl font-bold text-white mb-4">Certifications</h3>
                     <p class="text-[#86868b] text-lg mb-6">Validating cloud infrastructure and architectural design knowledge.</p>
@@ -143,7 +133,6 @@
                         <li>AWS Cloud Practitioner (Sep 2026)</li>
                     </ul>
                 </div>
-
                 <div class="apple-card p-10 reveal-up delay-300">
                     <h3 class="text-2xl font-bold text-white mb-4">Core Coursework</h3>
                     <p class="text-[#86868b] text-lg mb-6">Academic foundation in computing systems and optimization.</p>
@@ -157,8 +146,9 @@
         </div>
     </section>
 
+    <!-- Blog Section -->
     <section id="blog" class="py-32 px-6 bg-black">
-        <div class="max-w-[92vw] mx-auto">
+        <div class="max-w-6xl mx-auto">
             <div class="flex flex-col items-center mb-16 reveal-up">
                 <h2 class="text-4xl md:text-6xl font-bold tracking-tight mb-4 text-center">
                     Latest Thoughts.
@@ -201,11 +191,10 @@
             </div>
 
             <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Blog Post 1 -->
                 <a href="blog-post.html?post=aws-lambda" class="group block reveal-up">
                     <div class="apple-card overflow-hidden h-full flex flex-col">
                         <div class="h-48 w-full bg-zinc-800 relative overflow-hidden">
-                            <img src="https://placehold.co/600x400/18181b/ffffff?text=AWS+Architecture" alt="AWS Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <img src="https://placehold.co/600x400/18181b/ffffff?text=AWS+Architecture" alt="AWS Post" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
                         <div class="p-8 flex-grow flex flex-col justify-between">
                             <div>
@@ -220,11 +209,10 @@
                     </div>
                 </a>
 
-                <!-- Blog Post 2 -->
                 <a href="blog-post.html?post=solo-travel" class="group block reveal-up delay-100">
                     <div class="apple-card overflow-hidden h-full flex flex-col">
                         <div class="h-48 w-full bg-zinc-800 relative overflow-hidden">
-                            <img src="https://placehold.co/600x400/18181b/ffffff?text=Solo+Travel" alt="Travel Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <img src="https://placehold.co/600x400/18181b/ffffff?text=Solo+Travel" alt="Travel Post" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
                         <div class="p-8 flex-grow flex flex-col justify-between">
                             <div>
@@ -239,11 +227,10 @@
                     </div>
                 </a>
 
-                <!-- Blog Post 3 -->
                 <a href="blog-post.html?post=hyprland-neovim" class="group block reveal-up delay-200">
                     <div class="apple-card overflow-hidden h-full flex flex-col">
                         <div class="h-48 w-full bg-zinc-800 relative overflow-hidden">
-                            <img src="https://placehold.co/600x400/18181b/ffffff?text=Linux+Workspace" alt="Linux Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <img src="https://placehold.co/600x400/18181b/ffffff?text=Linux+Workspace" alt="Linux Post" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
                         <div class="p-8 flex-grow flex flex-col justify-between">
                             <div>
@@ -261,11 +248,12 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="border-t border-gray-800/50 py-12 px-6">
-        <div class="max-w-[92vw] mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-[#86868b]">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-[#86868b]">
             <p class="mb-4 md:mb-0">&copy; 2026 Tanner Thyes. All rights reserved.</p>
             <div class="flex space-x-6">
-                <a href="#" class="hover:text-white transition-colors">GitHub</a>
+                <a href="https://github.com/tannerjthyes" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub</a>
                 <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
                 <a href="#" class="hover:text-white transition-colors">Twitter / X</a>
             </div>
