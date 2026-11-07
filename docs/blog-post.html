@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post | Tanner Thyes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased selection:bg-gray-700 selection:text-white">
+    <main class="min-h-screen px-6 py-16">
+        <article class="max-w-3xl mx-auto apple-card p-8 md:p-12">
+            <a href="index.html#blog" class="inline-flex items-center text-sm text-[#86868b] hover:text-white transition-colors mb-8">
+                ← Back to Blog
+            </a>
+            <p id="post-category" class="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-4"></p>
+            <h1 id="post-title" class="text-4xl md:text-5xl font-bold tracking-tight mb-8"></h1>
+            <div id="post-content" class="text-lg md:text-xl leading-relaxed text-[#d2d2d7] space-y-6"></div>
+        </article>
+    </main>
+
+    <script>
+        const ARTICLE_CONTENT = {
+            'aws-lambda': {
+                category: 'Cloud Engineering',
+                title: 'Mastering AWS S3 & Lambda Deployments',
+                paragraphs: [
+                    'Production-ready serverless systems start with clear boundaries. S3 handles durable object storage, while Lambda focuses on event-driven processing with narrowly scoped responsibilities.',
+                    'I design deployments around repeatable infrastructure as code, least-privilege IAM policies, and environment-specific configuration to keep release workflows safe and predictable.',
+                    'Observability is the final step: structured logs, dead-letter queues, and alerting make incident response faster while preserving the speed advantage of serverless development.'
+                ]
+            },
+            'solo-travel': {
+                category: 'Life & Travel',
+                title: 'From Chiang Mai to Athens: How Solo Travel Shaped My Engineering Mindset',
+                paragraphs: [
+                    'Solo travel teaches resourcefulness in unfamiliar systems—exactly the same mindset required when debugging distributed infrastructure.',
+                    'Each city brought different constraints, from connectivity to language barriers. Adapting quickly became a practice in prioritization and risk management.',
+                    'That perspective now informs how I build software: reduce assumptions, design for resilience, and stay curious when the path forward is unclear.'
+                ]
+            },
+            'hyprland-neovim': {
+                category: 'Workspace Setup',
+                title: 'Building the Perfect Hyprland & Neovim Workspace',
+                paragraphs: [
+                    'A focused development environment removes friction. Hyprland gives me fast, keyboard-first window management while Neovim keeps editing speed and control high.',
+                    'I optimize around consistency: shared keymaps, terminal-native tools, and lightweight automation for repetitive tasks.',
+                    'The goal is simple—shorten feedback loops so building, testing, and iterating feel effortless.'
+                ]
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const postKey = params.get('post');
+        const customTitle = params.get('title');
+        const customCategory = params.get('category');
+        const selectedPost = ARTICLE_CONTENT[postKey] || {
+            category: customCategory || 'Blog',
+            title: customTitle || 'Article',
+            paragraphs: [
+                'Thanks for reading this post. Full article content can be added by linking to an external URL or by creating a dedicated article entry.'
+            ]
+        };
+
+        document.getElementById('post-category').textContent = selectedPost.category;
+        document.getElementById('post-title').textContent = selectedPost.title;
+
+        const contentContainer = document.getElementById('post-content');
+        selectedPost.paragraphs.forEach((paragraph) => {
+            const element = document.createElement('p');
+            element.textContent = paragraph;
+            contentContainer.appendChild(element);
+        });
+    </script>
+</body>
+</html>
