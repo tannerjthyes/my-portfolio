@@ -3,144 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mastering AWS S3 & Lambda Deployments | Tanner Thyes</title>
+    <title>Starting a blog without a plan | Tanner Thyes</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body class="antialiased selection:bg-gray-700 selection:text-white">
 
     <!-- Frosted Navigation -->
-<nav class="fixed top-0 w-full z-50 frosted-nav">
-    <div class="max-w-[92vw] mx-auto px-6 py-3.5 flex justify-between items-center text-sm font-medium text-gray-300">
-        <a href="../index.html" class="text-white font-semibold tracking-tight px-2 py-1 -mx-2 rounded-lg hover:opacity-90">
-            Tanner Thyes
-        </a>
+    <nav class="fixed top-0 w-full z-50 frosted-nav">
+        <div class="max-w-5xl mx-auto px-6 py-3.5 flex justify-between items-center text-sm font-medium text-gray-300">
+            <a href="../index.html" class="text-white font-semibold tracking-tight px-2 py-1 -mx-2 rounded-lg hover:opacity-90">
+                Tanner Thyes
+            </a>
 
-        <!-- Desktop Wayfinding Links -->
-        <div class="hidden md:flex items-center space-x-2">
-            <a href="../index.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Overview</a>
-            <a href="../resume.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Resume</a>
-            <a href="../projects/index.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Projects</a>
-            <a href="index.html" aria-current="page" class="px-3.5 py-1.5 rounded-full bg-white/10 text-white font-semibold">Journal</a>
+            <div class="hidden md:flex items-center space-x-2">
+                <a href="../index.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Overview</a>
+                <a href="../resume.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Resume</a>
+                <a href="../projects/index.html" class="px-3.5 py-1.5 rounded-full text-gray-300 hover:text-white hover:bg-white/5">Projects</a>
+                <a href="index.html" aria-current="page" class="px-3.5 py-1.5 rounded-full bg-white/10 text-white font-semibold">Journal</a>
+            </div>
+
+            <a href="mailto:contact@example.com" class="hidden md:inline-flex items-center px-4 py-1.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-gray-200">
+                Contact
+            </a>
+
+            <button id="mobile-menu-btn" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden p-2 -mr-2 text-gray-300 hover:text-white focus:outline-none cursor-pointer">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
 
-        <a href="mailto:contact@example.com" class="hidden md:inline-flex items-center px-4 py-1.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-gray-200">
-            Contact
-        </a>
-
-        <!-- Mobile Menu Trigger -->
-        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden p-2 -mr-2 text-gray-300 hover:text-white focus:outline-none cursor-pointer">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
-    </div>
-
-    <!-- Mobile Sheet Dropdown -->
-    <div id="mobile-menu" class="hidden md:hidden frosted-nav border-t border-white/10">
-        <div class="flex flex-col px-6 py-5 space-y-3 text-center text-base">
-            <a href="../index.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Overview</a>
-            <a href="../resume.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Resume</a>
-            <a href="../projects/index.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Projects</a>
-            <a href="index.html" class="py-2 rounded-xl bg-white/10 text-white font-semibold">Journal</a>
-            <a href="mailto:contact@example.com" class="py-2.5 mt-2 rounded-full bg-white text-black font-semibold">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden frosted-nav border-t border-white/10">
+            <div class="flex flex-col px-6 py-5 space-y-3 text-center text-base">
+                <a href="../index.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Overview</a>
+                <a href="../resume.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Resume</a>
+                <a href="../projects/index.html" class="py-2 rounded-xl text-gray-300 hover:text-white">Projects</a>
+                <a href="index.html" class="py-2 rounded-xl bg-white/10 text-white font-semibold">Journal</a>
+                <a href="mailto:contact@example.com" class="py-2.5 mt-2 rounded-full bg-white text-black font-semibold">Contact</a>
+            </div>
         </div>
-    </div>
-</nav>
-    <!-- Post Content Container -->
-    <article class="pt-36 pb-20 px-6 max-w-3xl mx-auto">
-        
-        <!-- Back Link -->
-        <div class="mb-10 reveal-up">
-            <a href="index.html" class="inline-flex items-center text-sm font-medium text-[#86868b] hover:text-white transition-colors">
+    </nav>
+
+    <!-- Article Container -->
+    <main class="min-h-screen px-6 pt-32 pb-20">
+        <article class="max-w-3xl mx-auto apple-card p-8 md:p-12 reveal-up">
+            <a href="index.html" class="inline-flex items-center text-sm text-[#86868b] hover:text-white transition-colors mb-8">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                Back to all articles
+                Back to Journal
             </a>
-        </div>
 
-        <!-- Article Header -->
-        <header class="mb-12 reveal-up">
-            <div class="flex items-center space-x-3 text-xs uppercase tracking-wider text-blue-400 font-semibold mb-4">
-                <span>Cloud Engineering</span>
-                <span>&bull;</span>
-                <span class="text-[#86868b]">6 min read</span>
-                <span>&bull;</span>
-                <span class="text-[#86868b]">October 2026</span>
+            <div class="flex items-center space-x-3 text-xs font-semibold uppercase tracking-wider mb-4">
+                <span class="text-blue-400">Notes</span>
+                <span class="text-zinc-600">&bull;</span>
+                <span class="text-[#86868b]">Nov 2026</span>
             </div>
-            <h1 class="text-4xl md:text-6xl font-bold tracking-tighter-apple leading-tight text-white mb-6">
-                Mastering AWS S3 & Lambda Deployments
+
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-8">
+                Starting a blog without a plan
             </h1>
-            <p class="text-xl text-[#86868b] leading-relaxed">
-                Architecting resilient, cost-effective serverless ingestion pipelines without provisioning a single server.
-            </p>
-        </header>
 
-        <!-- Featured Image -->
-        <div class="apple-card overflow-hidden mb-12 reveal-up delay-100">
-            <img src="https://placehold.co/1200x600/18181b/ffffff?text=AWS+S3+%2B+Lambda+Architecture" alt="Architecture Diagram" class="w-full h-auto object-cover">
-        </div>
+            <div class="text-lg md:text-xl leading-relaxed text-[#d2d2d7] space-y-6">
+                <p>
+                    I built this site to have a home for my engineering projects and resume, and adding a blog section felt like a natural next step. The only catch is that I am not entirely sure how I want to use it yet.
+                </p>
 
-        <!-- Article Body -->
-        <div class="space-y-8 text-lg text-gray-300 leading-relaxed font-normal reveal-up">
-            <p>
-                When building modern data platforms, the friction of maintaining always-on compute instances for sporadic workloads is one of the highest invisible costs an engineering team can incur. Between patching OS dependencies, managing auto-scaling groups, and paying for idle CPU cycles, server-based solutions often demand more maintenance than the business logic itself.
-            </p>
+                <p>
+                    If you have not read the rest of the site, I am Tanner. I studied computer engineering and economics at Purdue and Butler, and I work as a software engineer. Outside of work and tweaking my Linux setup with Hyprland and Neovim, I spend my free time studying for AWS certifications, playing golf and chess, collecting stationery, and tracking award flights.
+                </p>
 
-            <h2 class="text-2xl md:text-3xl font-bold text-white pt-6 tracking-tight">The Power of Event-Driven Triggers</h2>
-            <p>
-                By shifting to an event-driven model using <span class="text-white font-medium">Amazon S3 Event Notifications</span> combined with <span class="text-white font-medium">AWS Lambda</span>, your system only wakes up when there is actual work to be performed. When a new batch of raw JSON or Parquet files lands in an S3 bucket, S3 emits an <code class="text-blue-400 bg-zinc-900 px-2 py-0.5 rounded text-sm font-mono">s3:ObjectCreated:*</code> notification directly to a subscribed Lambda function or an intermediary SQS queue.
-            </p>
+                <p>
+                    Earlier in 2026, I spent 165 days backpacking solo across four continents. I came home with two scuba certifications and a camera roll full of photos I still need to sort through.
+                </p>
 
-            <div class="apple-card p-6 bg-zinc-900/60 border border-zinc-800 my-8">
-                <p class="text-sm font-semibold uppercase tracking-wider text-zinc-400 mb-2 font-mono">Core Takeaway</p>
-                <p class="text-white font-medium italic">
-                    "Decouple file arrival from file ingestion. Never poll an S3 bucket when S3 is willing to push notifications to you for free."
+                <!-- Multi-Photo Gallery (Swap in your image paths in assets/images/) -->
+                <div class="my-10 space-y-4">
+                    <figure class="rounded-2xl overflow-hidden bg-zinc-900 border border-white/10">
+                        <img src="../assets/images/about-tanner.png" alt="Chiang Mai, Thailand" loading="lazy" decoding="async" class="w-full h-72 md:h-96 object-cover">
+                        <figcaption class="px-4 py-3 text-xs text-[#86868b] bg-zinc-950/80">
+                            Chiang Mai, Thailand.
+                        </figcaption>
+                    </figure>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <figure class="rounded-2xl overflow-hidden bg-zinc-900 border border-white/10">
+                            <img src="../assets/images/blog-intro-2.jpg" alt="Photo two description" loading="lazy" decoding="async" class="w-full h-56 object-cover">
+                            <figcaption class="px-4 py-2.5 text-xs text-[#86868b] bg-zinc-950/80">
+                                Add a short caption for photo two.
+                            </figcaption>
+                        </figure>
+
+                        <figure class="rounded-2xl overflow-hidden bg-zinc-900 border border-white/10">
+                            <img src="../assets/images/blog-intro-3.jpg" alt="Photo three description" loading="lazy" decoding="async" class="w-full h-56 object-cover">
+                            <figcaption class="px-4 py-2.5 text-xs text-[#86868b] bg-zinc-950/80">
+                                Add a short caption for photo three.
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-white pt-4">
+                    What might end up here
+                </h2>
+
+                <p>
+                    That trip is part of why I wanted a place to post photos and write a few things down. I keep a personal journal, though most of what goes in there is too private to put on the open internet. Running a public blog mostly means figuring out where that line sits.
+                </p>
+
+                <p>
+                    For now, this space will probably hold a mix of side hobbies and travel stories, along with the occasional technical note. Some posts might cover a hiking trail or a notebook setup I like, while others might just be notes from a weekend project.
+                </p>
+
+                <p>
+                    There is no posting schedule here. When something feels worth sharing, I will put it up.
                 </p>
             </div>
-
-            <h2 class="text-2xl md:text-3xl font-bold text-white pt-6 tracking-tight">Safeguarding Against Concurrency Bursts</h2>
-            <p>
-                A common pitfall with direct S3-to-Lambda integrations is concurrency throttling. If an upstream batch job uploads 50,000 files in parallel, direct invocation triggers 50,000 simultaneous Lambda executions, which will quickly exhaust regional concurrency limits and overwhelm downstream databases like Snowflake or Redshift.
-            </p>
-            <p>
-                The production-grade pattern introduces an <strong>Amazon SQS (Simple Queue Service) FIFO or standard buffer</strong> between S3 and Lambda. Lambda polls SQS with a controlled batch size and concurrency threshold, ensuring downstream persistence layers never experience connection spikes or rate limiting.
-            </p>
-
-            <h2 class="text-2xl md:text-3xl font-bold text-white pt-6 tracking-tight">Conclusion & Next Steps</h2>
-            <p>
-                Modern cloud engineering is about leveraging managed primitives that scale horizontally to zero and require zero operational toil. In the next writeup, we will explore managing this entire stack declaratively with Terraform and integrating dbt Cloud webhooks for post-ingestion transformations.
-            </p>
-        </div>
-
-        <!-- Author Card -->
-        <div class="apple-card p-8 mt-16 flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 border border-zinc-800 reveal-up">
-            <div class="w-16 h-16 rounded-full bg-zinc-700 flex-shrink-0 flex items-center justify-center text-xl font-bold text-white">
-                TT
-            </div>
-            <div>
-                <h4 class="text-lg font-bold text-white">Tanner Thyes</h4>
-                <p class="text-[#86868b] text-sm leading-relaxed">
-                    Cloud Architect & Data Engineer passionate about distributed systems, Linux minimalism, and solo photography expeditions.
-                </p>
-            </div>
-        </div>
-
-        <!-- Next Post Link -->
-        <div class="mt-12 text-center reveal-up">
-            <a href="index.html" class="inline-flex items-center space-x-2 text-white hover:text-blue-400 font-medium transition-colors">
-                <span>View More Articles in The Journal</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </a>
-        </div>
-
-    </article>
+        </article>
+    </main>
 
     <!-- Footer -->
     <footer class="border-t border-gray-800/50 py-12 px-6">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-[#86868b]">
             <p class="mb-4 md:mb-0">&copy; 2026 Tanner Thyes. All rights reserved.</p>
             <div class="flex space-x-6">
-                <a href="#" class="hover:text-white transition-colors">GitHub</a>
+                <a href="https://github.com/tannerjthyes" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub</a>
                 <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
                 <a href="#" class="hover:text-white transition-colors">Twitter / X</a>
             </div>
