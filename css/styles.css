@@ -30,13 +30,13 @@ body {
 .tracking-tighter-apple,
 h1 {
     letter-spacing: -0.035em;
-    line-height: 1.12;
+    line-height: 1.18 !important;
     font-optical-sizing: auto;
 }
 
 h2 {
     letter-spacing: -0.022em;
-    line-height: 1.1;
+    line-height: 1.18 !important;
 }
 
 h3, h4 {
@@ -63,9 +63,9 @@ p, li {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
-    padding-bottom: 0.1em;
+    padding-bottom: 0.2em;
+    margin-bottom: -0.2em;
 }
-
 /* ==========================================================================
    3. Translucent Materials & Cards
    ========================================================================== */
